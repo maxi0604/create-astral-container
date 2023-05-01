@@ -4,7 +4,7 @@ if [ "$EULA" = "TRUE" ]; then
 		eula=true" >eula.txt
 
 	rm -f server.properties
-	[ -f "init/server.properties" ] && cp server.properties.init server.properties
+	[ -f "init/server.properties" ] && cp /init/server.properties server.properties
 
 	if [ -n "$RCON_PASSWORD" ]; then
 		grep "^rcon.password" server.properties || echo "rcon.password=$RCON_PASSWORD" >>server.properties
