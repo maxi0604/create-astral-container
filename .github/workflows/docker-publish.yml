@@ -19,7 +19,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: maxi0604/astral-create
+  IMAGE_NAME: maxi0604/create-astral
 
 
 jobs:
