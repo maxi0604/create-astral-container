@@ -1,0 +1,15 @@
+services:
+  create-astral:
+    image: ghcr.io/maxi0604/create-astral:main
+    environment:
+        EULA: "FALSE"
+    ports:
+      - 25565:25565
+    volumes:
+      - ./ops.json:/data/ops.json:z
+      - ./banned-players.json:/data/banned-players.json:z
+      - ./banned-ips.json:/data/banned-ips.json:z
+      - ./server.properties:/init/server.properties:z
+      - astral-world:/data/world
+volumes:
+  astral-world:
