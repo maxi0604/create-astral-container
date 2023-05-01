@@ -21,7 +21,7 @@ to get access to the RCON interface to the last server you started where you can
 This image is still quite new and features might still be added (or worse, removed) from it.
 
 # Configuration
-The container generates server.properties from your when started. To configure the server
+The container generates server.properties from your configuration and the environment when started. To configure the server
 - Create a file `server.properties` on your machine.
 - Enter the desired configuration options into `server.properties`, for example:
 ```
