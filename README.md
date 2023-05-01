@@ -1,13 +1,18 @@
 # Introduction
 Run a server for the Create: Astral Minecraft® using a container engine like `podman` or `docker`.
 
-Simply run 
+Simply run (instructions should be mostly equivalent for `docker`)
 ```
 podman volume create astral-world
-podman run -e EULA=TRUE -e JVM_ARGS="-Xmx8192m" -p 25565:25565 -v astral-world:/world astral-contain:latest
+podman run -e EULA=TRUE -e RCON_PASSWORD=hunter2 -p 25565:25565 -v astral-world:/world astral-contain:latest
 ```
-to get started.
+to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
 
+Run 
+```
+podman exec -itl rcon
+```
+to get access to the RCON interface to the last server you started where you can run admin commands. (`RCON_PASSWORD` must be set for this.)
 
 # License
 I do not claim ownership of or affiliation with Minecraft®,  Create: Astral or FabricMC.
