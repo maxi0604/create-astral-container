@@ -2,7 +2,7 @@
 Run a server for the Create: Astral Minecraft® modpack using a container engine like `podman` or `docker`.
 
 Simply run (The commands should be mostly equivalent for `docker`)
-```
+```bash
 podman volume create astral-world # By running the following command you agree to the Minecraft EULA.
 podman run -e EULA=TRUE \
   -e RCON_PASSWORD=hunter2 \
@@ -13,7 +13,7 @@ podman run -e EULA=TRUE \
 to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
 
 Run 
-```
+```bash
 podman exec -itl rcon
 ```
 to get access to the RCON interface to the last server you started where you can run admin commands. (`RCON_PASSWORD` must be set for this.)
