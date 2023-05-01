@@ -30,7 +30,7 @@ gamemode=creative
 enable-command-block=true
 ```
 - Mount your configuration into the container by adding `-v ./server.properties:/init/server.properties:z`
-(You can name the file differently on the host machine but the mount point with in the container must remain the same.)
+(You can name the file differently on the host machine but the mount point within the container must remain the same.)
 - Note that changes you make in the file overwrite changes made by the container. For example, if you set `rcon.password` yourself,
 you will not be able to connect to the RCON server with the command given above, even if you have set `RCON_PASSWORD`.
 
