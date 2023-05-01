@@ -8,7 +8,7 @@ podman run -e EULA=TRUE \
   -e RCON_PASSWORD=hunter2 \
   -p 25565:25565 \
   -v astral-world:/world \
-  ghcr.io/maxi0604/astral-create:main
+  ghcr.io/maxi0604/create-astral:main
 ```
 to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
 
