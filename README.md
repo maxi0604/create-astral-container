@@ -11,6 +11,14 @@ To set up:
 
 The server should now be up and running.
 
+Run 
+```bash
+podman exec -itl rcon
+```
+to get access to the RCON interface to the last server you started where you can run admin commands. (`RCON_PASSWORD` must be set for this.)
+
+This image is still quite new and features might still be added (or worse, removed) from it.
+
 #  Manual Setup
 The server can be set up without using a layer like `podman-compose` or `docker-compose`.
 
@@ -24,14 +32,6 @@ podman run -d -e EULA=TRUE \
   ghcr.io/maxi0604/create-astral:main
 ```
 to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
-
-Run 
-```bash
-podman exec -itl rcon
-```
-to get access to the RCON interface to the last server you started where you can run admin commands. (`RCON_PASSWORD` must be set for this.)
-
-This image is still quite new and features might still be added (or worse, removed) from it.
 
 ## Configuration
 ### server.properties
