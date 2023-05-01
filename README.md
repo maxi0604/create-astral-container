@@ -1,5 +1,18 @@
-# Introduction and Basic Setup
-Run a server for the Create: Astral Minecraft® modpack using a container engine like `podman` or `docker`.
+# Introduction and Automatic Setup
+Do you want to run a server for Create: Astral without the hassle of setting up Java and Fabric.
+This repository allow you to run a server for the Create: Astral Minecraft® modpack using a container engine like `podman` or `docker`.
+Everything is bundled, just do some configuration and you're set.
+
+To set up:
+- Clone this repository
+- Accept the Minecraft EULA by changing `EULA: "FALSE"` to `EULA: "TRUE"` in compose.yml
+- Choose a secure password for RCON. (RCON is not exposed to the network by default)
+- Run `podman-compose up -d`
+
+The server should now be up and running.
+
+#  Manual Setup
+The server can be set up without using a layer like `podman-compose` or `docker-compose`.
 
 Simply run (The commands should be mostly equivalent for `docker`)
 ```bash

@@ -3,6 +3,7 @@ services:
     image: ghcr.io/maxi0604/create-astral:main
     environment:
         EULA: "FALSE"
+        RCON_PASSWORD: "hunter2"
     ports:
       - 25565:25565
     volumes:
