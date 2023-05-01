@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ -n "$RCON_PASSWORD" ]; then
-	rcon-cli -a "[::1]:25575" -p "$RCON_PASSWORD" -c "/etc/rcon.yaml" "$@"
+	rcon-cli -a "localhost:25575" -p "$RCON_PASSWORD" -c "/etc/rcon.yaml" "$@"
 else
-	rcon-cli -a "[::1]:25575" -c "/etc/rcon.yaml"
+	rcon-cli -a "localhost:25575" -c "/etc/rcon.yaml"
 fi
