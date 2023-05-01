@@ -14,6 +14,7 @@ RUN install -m 755 rcon/rcon /usr/local/bin/rcon-cli
 RUN install -m 644 rcon/rcon.yaml /etc/rcon.yaml
 COPY --chmod=755 rcon /usr/local/bin/rcon
 
+RUN mkdir init
 COPY --chmod=755 entrypoint.sh /entrypoint.sh
 RUN rm -r rcon.tar.gz rcon
 

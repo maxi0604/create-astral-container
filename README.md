@@ -1,9 +1,9 @@
-# Introduction
+# Introduction and basic setup
 Run a server for the Create: Astral Minecraft® modpack using a container engine like `podman` or `docker`.
 
 Simply run (The commands should be mostly equivalent for `docker`)
 ```bash
-podman volume create astral-world # By running the following command you agree to the Minecraft EULA.
+podman volume create astral-world
 podman run -d -e EULA=TRUE \
   -e RCON_PASSWORD=hunter2 \
   -p 25565:25565 \
@@ -19,6 +19,20 @@ podman exec -itl rcon
 to get access to the RCON interface to the last server you started where you can run admin commands. (`RCON_PASSWORD` must be set for this.)
 
 This image is still quite new and features might still be added (or worse, removed) from it.
+
+# Configuration
+The container generates server.properties from your when started. To configure the server
+- Create a file `server.properties` on your machine.
+- Enter the desired configuration options into `server.properties`, for example:
+```
+# Example configuration, see https://server.properties or Minecraft Wiki for available options.
+gamemode=creative
+enable-command-block=true
+```
+- Mount your configuration into the container by adding `-v ./server.properties:/init/server.properties:z`
+(You can name the file differently on the host machine but the mount point with in the container must remain the same.)
+- Note that changes you make in the file overwrite changes made by the container. For example, if you set `rcon.password` yourself,
+you will not be able to connect to the RCON server with the command given above, even if you have set `RCON_PASSWORD`.
 
 # License
 I do not claim ownership of or affiliation with Minecraft®, Create: Astral or FabricMC.
