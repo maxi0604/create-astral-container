@@ -1,10 +1,14 @@
 # Introduction
-Run a server for the Create: Astral Minecraft® using a container engine like `podman` or `docker`.
+Run a server for the Create: Astral Minecraft® modpack using a container engine like `podman` or `docker`.
 
-Simply run (instructions should be mostly equivalent for `docker`)
+Simply run (The commands should be mostly equivalent for `docker`)
 ```
-podman volume create astral-world
-podman run -e EULA=TRUE -e RCON_PASSWORD=hunter2 -p 25565:25565 -v astral-world:/world ghcr.io/maxi0604/astral-create:main
+podman volume create astral-world # By running the following command you agree to the Minecraft EULA.
+podman run -e EULA=TRUE \
+  -e RCON_PASSWORD=hunter2 \
+  -p 25565:25565 \
+  -v astral-world:/world \
+  ghcr.io/maxi0604/astral-create:main
 ```
 to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
 
