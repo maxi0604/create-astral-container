@@ -14,8 +14,10 @@ podman exec -itl rcon
 ```
 to get access to the RCON interface to the last server you started where you can run admin commands. (`RCON_PASSWORD` must be set for this.)
 
+This image is still quite new and features might still be added (or worse, removed) from it.
+
 # License
-I do not claim ownership of or affiliation with Minecraft®,  Create: Astral or FabricMC.
+I do not claim ownership of or affiliation with Minecraft®, Create: Astral or FabricMC.
 This software package does not redistribute the Minecraft® server by itself, the server software is downloaded
 when the container is initialized. The Create: Astral modpack is redistributed with preliminary permission from a developer.
 To use this software you must agree to the [Minecraft EULA](https://www.minecraft.net/en-us/eula) by setting the environment variable `EULA=true`.
