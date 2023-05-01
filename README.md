@@ -4,7 +4,7 @@ Run a server for the Create: Astral Minecraft® modpack using a container engine
 Simply run (The commands should be mostly equivalent for `docker`)
 ```bash
 podman volume create astral-world # By running the following command you agree to the Minecraft EULA.
-podman run -e EULA=TRUE \
+podman run -d -e EULA=TRUE \
   -e RCON_PASSWORD=hunter2 \
   -p 25565:25565 \
   -v astral-world:/world \
