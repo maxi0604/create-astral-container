@@ -1,4 +1,4 @@
-# Introduction and basic setup
+# Introduction and Basic Setup
 Run a server for the Create: Astral Minecraft® modpack using a container engine like `podman` or `docker`.
 
 Simply run (The commands should be mostly equivalent for `docker`)
