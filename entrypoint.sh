@@ -3,6 +3,7 @@ if [ "$EULA" = "TRUE" ]; then
 	echo "# EULA accepted semi-automatically by container.\ 
 		eula=true" >eula.txt
 
+	rm server.properties
 	if [ -n "$RCON_PASSWORD" ]; then
 		echo "rcon.password=$RCON_PASSWORD" >server.properties
 		echo "enable-rcon=true" >>server.properties
