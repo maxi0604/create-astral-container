@@ -1,5 +1,5 @@
 FROM eclipse-temurin:17-jre-jammy
-RUN apt-get -q update && apt-get -q install -y unzip jq
+RUN apt-get -qq update && apt-get -qq install -y unzip jq
 
 RUN curl -fsSL -o "/tmp/pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/4496671/download"
 RUN unzip -q /tmp/pack.zip
