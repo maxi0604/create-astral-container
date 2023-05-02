@@ -19,6 +19,28 @@ to get access to the RCON interface to the last server you started where you can
 
 This image is still quite new and features might still be added (or worse, removed) from it.
 
+
+# Configuration
+## server.properties
+The container generates server.properties from your configuration as well as some defaults when started. To configure the server
+- Enter only the desired configuration options into `server.properties`, for example:
+```
+# Example configuration, see https://server.properties or Minecraft Wiki for available options.
+gamemode=creative
+enable-command-block=true
+```
+Note that configuration changes you make overwrite configuration changes made by the image.
+For example, if you include `rcon.password` in your server.properties instead of using the
+environment variable, the RCON command above will fail due to the password not being equal
+to the environment variable.
+
+## ops.json, banned-players.json, banned-ips.json
+These files are mounted as-is into the image. This means that this data is stored in the folder where
+you run your compose command. The required templates for these files are included.
+
+If you want to modify other files like those in the `config` folder, consider adding the
+`/data/config` folder as a volume similar to how the files above are set up.
+
 #  Manual Setup
 The server can be set up without using a layer like `podman-compose` or `docker-compose`.
 
@@ -28,28 +50,13 @@ podman volume create astral-world
 podman run -d -e EULA=TRUE \
   -e RCON_PASSWORD=hunter2 \
   -p 25565:25565 \
+  -v ./ops.json:/data/ops.json:z \
+  -v ./banned-players.json:/data/banned-players.json:z \
+  -v ./banned-ips.json:/data/banned-ips.json:z \
   -v astral-world:/data/world \
   ghcr.io/maxi0604/create-astral:main
 ```
 to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
-
-## Configuration
-### server.properties
-The container generates server.properties from your configuration as well as some defaults when started. To configure the server
-- Create a file `server.properties` on your machine.
-- Enter the desired configuration options into `server.properties`, for example:
-```
-# Example configuration, see https://server.properties or Minecraft Wiki for available options.
-gamemode=creative
-enable-command-block=true
-```
-- Mount your configuration into the container by adding `-v ./server.properties:/init/server.properties:z`
-(You can name the file differently on the host machine but the mount point within the container must remain the same.)
-- Note that changes you make in the file overwrite changes made by the container. For example, if you set `rcon.password` yourself,
-you will not be able to connect to the RCON server with the command given above, even if you have set `RCON_PASSWORD`.
-
-### ops.json and other Files
-If you want the list of server OPs other files to be stored outside of the container, mount them as such, e. g. `-v ./ops.json:/data/ops.json:z`
 
 # License
 I do not claim ownership of or affiliation with Minecraft®, Create: Astral or FabricMC.
