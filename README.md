@@ -1,5 +1,5 @@
 # Introduction and Automatic Setup
-Do you want to run a server for Create: Astral without the hassle of setting up Java and Fabric.
+Do you want to run a server for Create: Astral without the hassle of setting up Java and Fabric?
 This repository allow you to run a server for the Create: Astral Minecraft® modpack using a container engine like `podman` or `docker`.
 Everything is bundled, just do some configuration and you're set.
 
