@@ -35,7 +35,7 @@ to get started. This will run a Create: Astral server on port 25565 (the default
 
 ## Configuration
 ### server.properties
-The container generates server.properties from your when started. To configure the server
+The container generates server.properties from your configuration as well as some defaults when started. To configure the server
 - Create a file `server.properties` on your machine.
 - Enter the desired configuration options into `server.properties`, for example:
 ```
