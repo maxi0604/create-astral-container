@@ -21,7 +21,7 @@ RUN curl -fsSL -o "server.jar" "https://meta.fabricmc.net/v2/versions/loader/1.1
 RUN mkdir init
 COPY --chmod=755 entrypoint.sh /entrypoint.sh
 
-VOLUME /world
+VOLUME [ "/data/world", "/data/backups" ]
 EXPOSE 25565/tcp
 
 ENTRYPOINT [ "/entrypoint.sh" ]
