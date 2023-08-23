@@ -47,13 +47,15 @@ The server can be set up without using a layer like `podman-compose` or `docker-
 Simply run (The commands should be mostly equivalent for `docker`)
 ```bash
 podman volume create astral-world
+podman volume create astral-backup
 podman run -d -e EULA=TRUE \
   -e RCON_PASSWORD=hunter2 \
   -p 25565:25565 \
   -v ./ops.json:/data/ops.json:z \
   -v ./banned-players.json:/data/banned-players.json:z \
   -v ./banned-ips.json:/data/banned-ips.json:z \
-  -v astral-world:/data/world \
+  -v astral-world:/data/world:z \
+  -v astral-backup:/data/backup:z \
   ghcr.io/maxi0604/create-astral:main
 ```
 to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
