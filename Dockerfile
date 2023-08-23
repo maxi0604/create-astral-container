@@ -15,7 +15,7 @@ RUN curl -fsSL -o "/tmp/pack.zip" "https://www.curseforge.com/api/v1/mods/681792
 RUN unzip -q /tmp/pack.zip
 RUN rm /tmp/pack.zip
 
-RUN curl -fsSL -o "server.jar" "https://meta.fabricmc.net/v2/versions/loader/1.18.2/0.14.19/0.11.2/server/jar"
+RUN curl -fsSL -o "server.jar" "https://meta.fabricmc.net/v2/versions/loader/1.18.2/0.14.22/0.11.2/server/jar"
 
 
 RUN mkdir init
