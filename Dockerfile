@@ -11,7 +11,7 @@ RUN rm -r /tmp/rcon.tar.gz /tmp/rcon
 
 RUN mkdir /data
 WORKDIR /data
-RUN curl -fsSL -o "/tmp/pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/4731348/download"
+RUN curl -fsSL -o "/tmp/pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/4496671/download"
 RUN unzip -q /tmp/pack.zip
 RUN rm /tmp/pack.zip
 
