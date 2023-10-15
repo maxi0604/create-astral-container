@@ -16,3 +16,7 @@ services:
 volumes:
   astral-world:
   astral-backup:
+
+networks:
+  default:
+    enable_ipv6: true
