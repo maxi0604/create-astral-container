@@ -1,5 +1,3 @@
-**Status:** This can currently not be updated to the latest version because the modpack uses two mods that are archived on CurseForge and can't be
-downloaded automatically.
 # Introduction and Automatic Setup
 Do you want to run a server for Create: Astral without the hassle of setting up Java and Fabric?
 This repository allow you to run a server for the Create: Astral Minecraft® modpack using a container engine like `podman` or `docker`.
