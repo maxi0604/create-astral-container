@@ -17,9 +17,6 @@ podman exec -itl rcon
 ```
 to get access to the RCON interface to the last server you started where you can run admin commands. (`RCON_PASSWORD` must be set for this.)
 
-This image is still quite new and features might still be added (or worse, removed) from it.
-
-
 # Configuration
 ## server.properties
 The container generates server.properties from your configuration as well as some defaults when started. To configure the server
