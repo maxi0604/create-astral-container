@@ -57,8 +57,12 @@ podman run -d -e EULA=TRUE \
 ```
 to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
 
+# Contributing
+Feel free to send a merge request for any improvements you'd like.
+
 # License
 I do not claim ownership of or affiliation with Minecraft®, Create: Astral or FabricMC.
+
 This software package does not redistribute the Minecraft® server by itself, the server software is downloaded
 when the container is initialized. The Create: Astral modpack is redistributed with preliminary permission from a developer.
 To use this software you must agree to the [Minecraft EULA](https://www.minecraft.net/en-us/eula) by setting the environment variable `EULA=true`.
