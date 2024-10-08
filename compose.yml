@@ -1,6 +1,6 @@
 services:
   create-astral:
-    image: ghcr.io/maxi0604/create-astral:v2.1
+    image: ghcr.io/maxi0604/create-astral:v2.0.5b
     environment:
         EULA: "FALSE"
         RCON_PASSWORD: "hunter2"

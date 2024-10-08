@@ -53,7 +53,7 @@ podman run -d -e EULA=TRUE \
   -v ./banned-ips.json:/data/banned-ips.json:z \
   -v astral-world:/data/world:z \
   -v astral-backup:/data/backup:z \
-  ghcr.io/maxi0604/create-astral:v2.1
+  ghcr.io/maxi0604/create-astral:v2.0.5b
 ```
 to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
 
