@@ -15,7 +15,7 @@ Run
 ```bash
 podman exec -itl rcon
 ```
-to get access to the RCON interface to the last server you started where you can run admin commands. (`RCON_PASSWORD` must be set for this.)
+to get access to the RCON interface to the last server you started where you can run admin commands. (`RCON_PASSWORD` must be set for this. The `-l` flag to operate on the last container is only supported by podman. Enter the container name for `docker` or if you have interacted with another container in the meantime.)
 
 # Configuration
 ## server.properties
