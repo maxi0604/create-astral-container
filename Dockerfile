@@ -1,4 +1,4 @@
-FROM docker.io/eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:17-jre-jammy
 RUN apt-get -qq update && apt-get -qq install -y unzip jq
 
 RUN curl -fsSL -o "/tmp/rcon.tar.gz" $(curl -s https://api.github.com/repos/gorcon/rcon-cli/releases/latest | jq -r '.assets | map(select(.name | test("amd64_linux")))[0].browser_download_url')
@@ -11,10 +11,16 @@ RUN rm -r /tmp/rcon.tar.gz /tmp/rcon
 
 RUN mkdir /data
 WORKDIR /data
-RUN curl -fsSL -o "/tmp/pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/5795419/download"
+RUN curl -fsSL -o "/tmp/pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/5795941/download"
+RUN curl -fsSL -o "/tmp/old.zip" "https://www.curseforge.com/api/v1/mods/681792/files/4496671/download"
 RUN unzip -q /tmp/pack.zip
+RUN unzip -q /tmp/old.zip -d /tmp/old/
+RUN cp /tmp/old/mods/vinery-1.1.4.jar mods/
+RUN cp /tmp/old/mods/Hephaestus-1.18.2-3.5.2.155.jar mods/
 RUN rm /tmp/pack.zip
-RUN curl -fsSL -o "server.jar" "https://meta.fabricmc.net/v2/versions/loader/1.18.2/0.14.22/0.11.2/server/jar"
+RUN rm /tmp/old.zip
+RUN rm -rf /tmp/old/
+RUN curl -fsSL -o "server.jar" "https://meta.fabricmc.net/v2/versions/loader/1.18.2/0.16.3/0.11.1/server/jar"
 
 
 RUN mkdir init
