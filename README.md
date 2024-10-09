@@ -1,6 +1,6 @@
 # Introduction and Automatic Setup
-Do you want to run a server for Create: Astral without the hassle of setting up Java and Fabric?
-This repository allow you to run a server for the Create: Astral Minecraft® modpack using a container engine like `podman` or `docker`.
+Do you want to run a server for [Create: Astral](https://www.curseforge.com/minecraft/modpacks/create-astral) without the hassle of setting up Java and Fabric?
+This repository allow you to run a server for the Create: Astral Minecraft® modpack using a container engine like [`podman`](https://podman.io/) or [`docker`](https://www.docker.com/).
 Everything is bundled, just do some configuration and you're set.
 
 To set up:
@@ -39,7 +39,7 @@ If you want to modify other files like those in the `config` folder, consider ad
 `/data/config` folder as a volume similar to how the files above are set up.
 
 #  Manual Setup
-The server can be set up without using a layer like `podman-compose` or `docker-compose`.
+The server can be set up without using a program like `podman-compose` or `docker-compose`.
 
 Simply run (The commands should be mostly equivalent for `docker`)
 ```bash
@@ -56,6 +56,12 @@ podman run -d -e EULA=TRUE \
   ghcr.io/maxi0604/create-astral:v2.1
 ```
 to get started. This will run a Create: Astral server on port 25565 (the default) which stores the game world in a named volume.
+
+# Maintenance
+See the documentation for your preferred container engine for comprehensive guidance. Some hints:
+- You can set up automatic restart using `restart: always` in `compose.yml` or the `--restart=always` flag when not using compose.
+- Use `podman/docker logs [-f] <container name>` to inspect server logs. Adding `-f/--follow` causes log output to be displayed continously.
+- Look into backing up the `world` volume.
 
 # Contributing
 Feel free to send a merge request for any improvements you'd like.
