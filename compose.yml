@@ -11,6 +11,7 @@ services:
       - ./banned-players.json:/data/banned-players.json:z
       - ./banned-ips.json:/data/banned-ips.json:z
       - ./server.properties:/init/server.properties:z
+      - ./rcon.yaml:/etc/rcon.yaml:z
       - astral-world:/data/world:z
       - astral-backup:/data/backup:z
 volumes:
