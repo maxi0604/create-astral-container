@@ -42,11 +42,6 @@ jobs:
       - name: Install cosign
         if: github.event_name != 'pull_request'
         uses: sigstore/cosign-installer@v3
-      
-      # Setup QEMU to allow building multi-platform images
-      # https://docs.docker.com/build/ci/github-actions/multi-platform/
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
 
       # Set up BuildKit Docker container builder to be able to build
       # multi-platform images and export cache
