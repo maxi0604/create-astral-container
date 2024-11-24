@@ -6,7 +6,7 @@ RUN mkdir /tmp/rcon
 RUN tar -xf /tmp/rcon.tar.gz -C /tmp/rcon --strip-components=1
 
 WORKDIR /data
-RUN curl -fsSL -o "/tmp/pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/5795941/download"
+RUN curl -fsSL -o "/tmp/pack.zip" "https://www.curseforge.com/api/v1/mods/681792/files/5864156/download"
 RUN curl -fsSL -o "/tmp/old.zip" "https://www.curseforge.com/api/v1/mods/681792/files/4496671/download"
 RUN unzip -q /tmp/pack.zip -d /data
 RUN unzip -q /tmp/old.zip -d /tmp/old/
