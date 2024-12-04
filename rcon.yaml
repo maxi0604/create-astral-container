@@ -1,0 +1,4 @@
+# Change these as needed for your configuration
+host: localhost
+port: 25575
+password: hunter2
